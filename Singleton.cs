@@ -10,7 +10,7 @@ namespace Desing_Patterns
         public string message = "";
 
         private Singleton() {
-            this.message = "hola mundo";
+            this.message = "Hello World";
         }
 
         public static Singleton Instance
