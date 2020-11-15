@@ -6,7 +6,14 @@ namespace Desing_Patterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            UseWidget(new AndroidWidget());
+            UseWidget(new IPhoneWidget());
+        }
+
+        static void UseWidget(IWidgetFactory widget)
+        {
+            Console.WriteLine(widget.CreateScrollBar());
+            Console.WriteLine(widget.CreateWindow());
         }
 
     }
