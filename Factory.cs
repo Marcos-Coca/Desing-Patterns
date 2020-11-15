@@ -4,40 +4,44 @@ using System.Text;
 
 namespace Desing_Patterns
 {
+
+    public interface IDrink
+    {
+        public int Taken();
+    }
     public class Factory
     {
-        public const int WINE = 1;
-        public const int SODA = 2;
-        public static Drink DrinkFactory(int type)
+        public enum DrinkType
         {
-            switch(type)
+            Wine,
+            Soda
+        }
+
+        public static IDrink DrinkFactory(DrinkType drink)
+        {
+            switch(drink)
             {
-                case WINE:
+                case DrinkType.Wine:
                     return new Wine();
 
-                case SODA:
+                case DrinkType.Soda:
                     return new Soda();
 
                 default: return null;
             }
         }
     }
-    public abstract class Drink
+    public class Wine : IDrink
     {
-        public abstract int Taken();
-    } 
-
-    public class Wine : Drink
-    {
-        public override int Taken()
+        public int Taken()
         {
             return 20;
         }
     }
 
-    public class Soda : Drink
+    public class Soda : IDrink
     {
-        public override int Taken()
+        public int Taken()
         {
             return 50;
         }

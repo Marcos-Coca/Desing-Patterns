@@ -6,7 +6,7 @@ namespace Desing_Patterns
     {
         static void Main(string[] args)
         {
-            Drink drink = Factory.DrinkFactory(Factory.SODA);
+            IDrink drink = Factory.DrinkFactory(Factory.DrinkType.Wine);
             Console.WriteLine(drink.Taken());
         }
 
