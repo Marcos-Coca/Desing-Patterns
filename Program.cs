@@ -6,10 +6,8 @@ namespace Desing_Patterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            // var instance = new Singleton(); Error 'cause the constructor is private 
-            Console.WriteLine(Singleton.Instance.message);
-            Console.WriteLine(Singleton.Instance.message);
+            Drink drink = Factory.DrinkFactory(Factory.SODA);
+            Console.WriteLine(drink.Taken());
         }
 
     }
